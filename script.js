@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
     }
     
     if (playerSelection === computerSelection){
-        return `It's a tie! ${playerSelection} doesn't beat ${computerSelection}`
+        return `It's a Tie! ${playerSelection} doesn't beat ${computerSelection}`
     } else {
         if(playerSelection === "Rock"){
             if(computerSelection === "Paper"){
@@ -53,7 +53,9 @@ function playRound(playerSelection, computerSelection) {
 function playGame(){
     let result;
     do {
-        let playerChoice = prompt("Please select one of the three options: Rock, Paper or Scissors");
+        let playerChoice 
+
+        playerChoice = prompt("Please select one of the three options: Rock, Paper or Scissors");
 
         let computerSelection = getComputerChoice();
     
@@ -63,7 +65,9 @@ function playGame(){
             playerCounter++
         } else if(result.includes('Lose')){
             computerCounter++
-        } else {
+        } else if(result.includes('Tie')){
+            
+        } else{
             alert(result);
         }
     } while(result.includes('Please write a valid option'))
@@ -78,7 +82,7 @@ function playGame(){
             console.log('Tie in the match!!!')
         }
         if(playerCounter > computerCounter){
-            console.log('You lon the Match!!!')
+            console.log('You won the Match!!!')
         }
         if(playerCounter < computerCounter){
             console.log('You lose the Match :C')
